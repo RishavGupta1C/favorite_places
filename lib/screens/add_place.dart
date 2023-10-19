@@ -23,6 +23,7 @@ class _AddPlaceScreenState extends ConsumerState<AddPlaceScreen> {
     }
 
     ref.read(userPlacesProvider.notifier).addPlace(enteredTitle);
+    Navigator.of(context).pop();
   }
 
   @override
