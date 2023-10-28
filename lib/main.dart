@@ -32,7 +32,9 @@ final theme = ThemeData().copyWith(
 void main() {
   runApp(
     // providerScope simply makes riverpod and provider available inside of our app
-    const ProviderScope(child: MyApp()),
+    const ProviderScope(
+      child: MyApp(),
+    ),
   );
 }
 

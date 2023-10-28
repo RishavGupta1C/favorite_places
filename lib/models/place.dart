@@ -1,5 +1,6 @@
 import 'package:uuid/uuid.dart';
 
+// UNIQUE ID
 const uuid = Uuid();
 
 class Place {
