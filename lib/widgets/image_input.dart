@@ -26,20 +26,36 @@ class _ImageInputState extends State<ImageInput> {
       return;
     }
 
-    _selectedImage = File(pickedImage.path);
+    setState(() {
+      _selectedImage = File(pickedImage.path);
+    });
   }
 
   @override
   Widget build(BuildContext context) {
+    Widget content = TextButton.icon(
+      onPressed: _takePicture,
+      icon: const Icon(Icons.camera),
+      label: const Text('Take Picture'),
+    );
+
+    if (_selectedImage != null) {
+      content = GestureDetector(
+        onTap: _takePicture,
+        child: Image.file(
+          _selectedImage!,
+          fit: BoxFit.fill,
+          width: double.infinity,
+          height: double.infinity,
+        ),
+      );
+    }
+
     return Container(
       height: 250,
       width: double.infinity,
       alignment: Alignment.center,
-      child: TextButton.icon(
-        onPressed: _takePicture,
-        icon: const Icon(Icons.camera),
-        label: const Text('Take Picture'),
-      ),
+      child: content,
       decoration: BoxDecoration(
         border: Border.all(
           width: 1,
