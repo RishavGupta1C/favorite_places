@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 class ImageInput extends StatefulWidget {
-  const ImageInput({Key? key}) : super(key: key);
+  const ImageInput({Key? key, required this.onPickImage}) : super(key: key);
+
+  final void Function(File image) onPickImage;
 
   @override
   State<ImageInput> createState() {
@@ -29,6 +31,10 @@ class _ImageInputState extends State<ImageInput> {
     setState(() {
       _selectedImage = File(pickedImage.path);
     });
+
+    // we are calling onPickImage from StatefulWidget class,
+    // so we need to use widget for calling the function.
+    widget.onPickImage(_selectedImage!);
   }
 
   @override
