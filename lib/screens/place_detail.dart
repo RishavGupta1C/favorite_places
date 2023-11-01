@@ -13,11 +13,17 @@ class PlaceDetailScreen extends StatelessWidget {
         title: Text(place.title),
       ),
       body: Center(
-        child: Text(
-          place.title,
-          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                color: Theme.of(context).colorScheme.onBackground,
-              ),
+        // stack widget allows us to put widgets on top of each other
+        // starting with the bottom-most widget
+        child: Stack(
+          children: [
+            Image.file(
+              place.image,
+              fit: BoxFit.fill, // instead of cover which is cropping the image
+              width: double.infinity,
+              height: double.infinity,
+            ),
+          ],
         ),
       ),
     );
