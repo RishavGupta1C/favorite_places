@@ -41,7 +41,7 @@ class PlaceDetailScreen extends StatelessWidget {
               child: Column(
                 children: [
                   CircleAvatar(
-                    radius: 70,
+                    radius: 60,
                     backgroundImage: NetworkImage(locationImage),
                   ),
                   Container(
