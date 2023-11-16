@@ -60,18 +60,18 @@ class _MapScreeenState extends State<MapScreen> {
         ),
         // set unlike map is just a list of values
         // It does not allow duplicate values
-        // markers: (_pickedLocation == null && widget.isSelecting)
-        //     ? {}
-        //     : {
-        //         Marker(
-        //           markerId: const MarkerId('m1'),
-        //           position: _pickedLocation ??
-        //               LatLng(
-        //                 widget.location.latitude,
-        //                 widget.location.longitude,
-        //               ),
-        //         ),
-        // },
+        markers: (_pickedLocation == null && widget.isSelecting)
+            ? {}
+            : {
+                Marker(
+                  markerId: const MarkerId('m1'),
+                  position: _pickedLocation ??
+                      LatLng(
+                        widget.location.latitude,
+                        widget.location.longitude,
+                      ),
+                ),
+              },
       ),
     );
   }
