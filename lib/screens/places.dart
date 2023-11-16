@@ -29,7 +29,7 @@ class PlacesScreen extends ConsumerWidget {
         ],
       ),
       body: Container(
-        padding: EdgeInsets.only(top: 10),
+        padding: const EdgeInsets.all(8),
         child: PlacesList(
           places: userPlaces,
         ),
